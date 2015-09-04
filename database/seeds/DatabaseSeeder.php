@@ -1,0 +1,105 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Post;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
+
+        // $this->call(UserTableSeeder::class);
+		$this->call(PostSeeder::class);
+
+        Model::reguard();
+    }
+}
+
+
+class PostSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+       DB::table('posts')->delete();
+       Post::create([
+       	'title' => 'Item 1',
+       	'slug' => 'item-1',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '1',
+       	
+       ]);
+       
+        Post::create([
+       	'title' => 'Item 2',
+       	'slug' => 'item-2',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '1',
+       	
+       ]);
+       
+        Post::create([
+       	'title' => 'Item 3',
+       	'slug' => 'item-3',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '1',
+       	
+       ]);
+       
+        Post::create([
+       	'title' => 'Item 4',
+       	'slug' => 'item-4',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '1',
+       	
+       ]);
+       
+        Post::create([
+       	'title' => 'Item 5',
+       	'slug' => 'item-5',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '0',
+       	
+       ]);
+       Post::create([
+       	'title' => 'Item 6',
+       	'slug' => 'item-6',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '0',
+       	
+       ]);
+		Post::create([
+       	'title' => 'Item 7',
+       	'slug' => 'item-7',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '0',
+       	
+       ]);
+       Post::create([
+       	'title' => 'Item 8',
+       	'slug' => 'item-8',
+       	'excerpt' => '<b> item 1</b>',
+       	'content' => 'this is item 1',
+       	'published' => '0',
+       	
+       ]);
+    }
+}
